@@ -1,0 +1,50 @@
+{
+  "name": "gnostr-lfs",
+  "version": "0.0.0",
+  "description": "gnostr large file service",
+  "main": "swarm.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnostr-org/gnostr-lfs"
+  },
+  "funding": [
+    "https://getalby.com/p/v_142857",
+    "https://ko-fi.com/v142857"
+  ],
+  "bin": {
+    "hyper-nostr": "server.js",
+    "gnostr-lfs-db-explorer": "db_explore.js"
+  },
+  "scripts": {
+    "nvm-install": "$(which nvm) exec npm install -g --force >/tmp/gnostr-lfs.log",
+    "test": "$(which npm) run lint && tape tests/**/*.js",
+    "lint": "standard --fix",
+    "start": "NODE_REDIRECT_WARNINGS=/tmp/gnostr-lfs.log $(which node) server.js",
+    "dev": "$(which node) server.js"
+  },
+  "dependencies": {
+    "@fastify/websocket": "^8.0.0",
+    "autobase": "github:holepunchto/autobase",
+    "autodeebee": "^1.0.1",
+    "fastify": "^4.17.0",
+    "graceful-goodbye": "^1.2.1",
+    "hyper-sdk": "^4.2.4",
+    "hyperbee": "^2.8.0",
+    "hyperdeebee": "github:Telios-org/hyperdeebee",
+    "nostr-tools": "^1.10.1",
+    "tape": "^5.6.3"
+  },
+  "keywords": [
+    "local-first",
+    "distributed",
+    "p2p",
+    "nostr",
+    "hypercore"
+  ],
+  "author": "v142857",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^17.0.0"
+  }
+}
