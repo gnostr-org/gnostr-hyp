@@ -1,0 +1,44 @@
+v16.20.1
+
+
+## REF:
+#
+## https://nodejs.org/dist/latest-v16.x/
+#
+## nvm:
+## curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+## wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+## curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+## wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+#
+## Using pnpm
+##
+## We provide two packages of pnpm CLI, pnpm and @pnpm/exe.
+##
+## pnpm is a ordinary version of pnpm, which needs Node.js to run.
+## npm install -g pnpm
+## npm install -g @pnpm/exe
+## nvm exec npm install -g @pnpm/exe
+#
+## brew install nvm pnpm
+#
+## ensure nvm is in your PATH
+## 
+## for example
+## export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm
+## export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &  nvm use && <command>
+## export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &  nvm use && nvm exec pnpm install
+#
+## nvm exec pnpm install && nvm exec pnpm run start
+#
+## nvm exec pnpm install
+## nvm exec pnpm rb -r
+## nvm exec pnpm run start
+#
+## Using yarn
+##
+## brew install yarn
+## nvm exec yarn install && nvm exec yarn run start
+## nvm exec yarn install
+## nvm exec yarn run start
+
