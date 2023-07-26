@@ -1,6 +1,9 @@
-# NOTE
+## ```make nvm pnpm run```
 
-The CLI is currently mostly out of date, tracking the previous major version of the Hypercore stack.
+==
+
+<details><summary>Click to see the upstream hypercore-protocol</summary>
+
 
 Check out the individual repos instead, like [Hypercore](https://github.com/hypercore-protocol/hypercore), [Hyperbee](https://github.com/hypercore-protocol/hyperbee), [Hyperbeam](https://github.com/mafintosh/hyperbeam), [Hyperswarm](https://github.com/hyperswarm)
 
