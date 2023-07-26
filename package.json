@@ -1,0 +1,65 @@
+{
+  "name": "@hyperspace/cli",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "A CLI for the hyper:// space network.",
+  "bin": {
+    "hyp": "./bin/hyp.js"
+  },
+  "scripts": {
+    "start": "node ./bin/hyp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypercore-protocol/hypercore-cli.git"
+  },
+  "keywords": [
+    "beaker",
+    "cli"
+  ],
+  "author": "Blue Link Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hypercore-protocol/hypercore-cli/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "homepage": "https://github.com/hypercore-protocol/hypercore-cli#readme",
+  "dependencies": {
+    "ansi-diff-stream": "^1.2.1",
+    "await-lock": "^2.1.0",
+    "binary-extensions": "^2.1.0",
+    "bytes": "^3.1.0",
+    "chalk": "^1.1.3",
+    "chokidar": "^3.4.3",
+    "concat-stream": "^2.0.0",
+    "diff-file-tree": "^2.5.1",
+    "hyperbeam": "^1.1.1",
+    "hyperbee": "^1.0.1",
+    "hyperdrive": "^10.18.0",
+    "hyperspace": "^3.17.0",
+    "hyperspace-mirroring-service": "^1.0.0",
+    "hypertrie": "5.1.3",
+    "identify-filetype": "^1.0.0",
+    "mime": "^1.4.0",
+    "mkdirp": "^1.0.4",
+    "moment": "^2.17.0",
+    "p-debounce": "^2.1.0",
+    "pretty-bytes": "^4.0.2",
+    "pretty-hash": "^1.0.1",
+    "progress-string": "^1.2.1",
+    "pump": "^3.0.0",
+    "random-words": "^1.1.1",
+    "range-parser": "^1.2.1",
+    "speedometer": "^1.1.0",
+    "subcommand": "^2.1.1",
+    "textextensions": "^5.12.0",
+    "through2": "^4.0.2",
+    "username": "^2.2.2",
+    "vm2": "^3.9.2",
+    "wrap-ansi": "^7.0.0",
+    "yesno": "^0.3.1"
+  }
+}
