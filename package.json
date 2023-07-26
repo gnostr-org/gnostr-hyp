@@ -1,5 +1,5 @@
 {
-  "name": "@hyperspace/cli",
+  "name": "@gnostr/hyp",
   "type": "module",
   "version": "2.0.0",
   "description": "A CLI for the hyper:// space network.",
