@@ -122,6 +122,7 @@ export RELAYS
 NODE_VERSION                            :=v16.14.2
 export NODE_VERSION
 NODE_ALIAS                              :=v16.14.0
+## REF: more notes in .nvmrc
 export NODE_ALIAS
 NVM_DIR                                 :=$(HOME)/.nvm
 export NVM_DIR
@@ -338,15 +339,11 @@ docker-start:
 	( \
 	   source .venv/bin/activate; $(PYTHON3) -m pip install -U -q -r requirements.txt; \
 	   $(PYTHON3) -m pip install -U -q --upgrade pip; \
-	);
-	( \
-	    while ! docker system info > /dev/null 2>&1; do\
-	    echo 'Waiting for docker to start...';\
-	    if [[ '$(OS)' == 'Linux' ]] && [[ '$(GITHUB_ACTIONS)' == 'false' ]]; then\
+	    if [[ '$(OS)' == 'Linux' ]]; then\
 	    type -P apt && apt install docker*;\
 	    type -P systemctl && systemctl restart docker.service || type -P service && service docker.service restart || type -P apk &&  apk add openrc docker && rc-service docker restart || echo "try installing docker manually...";\
 	    fi;\
-	    if [[ '$(OS)' == 'Darwin' ]] && [[ '$(GITHUB_ACTIONS)' == 'false' ]]; then\
+	    if [[ '$(OS)' == 'Darwin' ]]; then\
 	     open --background -a /./Applications/Docker.app/Contents/MacOS/Docker;\
 	    fi;\
 	sleep 1;\
