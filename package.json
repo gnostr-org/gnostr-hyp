@@ -1,9 +1,19 @@
 {
-  "name": "@gnostr/hyp",
-  "version": "0.0.1",
-  "description": "A CLI for the hyper:// space network.",
+  "name": "gnostr-lfs",
+  "version": "0.0.0",
+  "description": "gnostr large file service",
+  "main": "swarm.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnostr-org/gnostr-lfs"
+  },
+  "funding": [
+    "nostr://edfa27d49d2af37ee331e1225bb6ed1912c6d999281b36d8018ad99bc3573c29"
+  ],
   "bin": {
-    "gnostr-hyp": "./bin/gnostr-hyp.js"
+    "gnostr-hyp": "server.js",
+    "gnostr-lfs-db-explorer": "db_explore.js"
   },
   "scripts": {
     "prepare": "$(which husky) install || node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",

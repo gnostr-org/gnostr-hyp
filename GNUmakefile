@@ -118,7 +118,8 @@ export RELAYS
 ## REF: more notes in .nvmrc
 NODE_VERSION                            :=v16.20.1
 export NODE_VERSION
-NODE_ALIAS                              :=v16.20.0
+NODE_ALIAS                              :=v16.14.0
+## REF: more notes in .nvmrc
 export NODE_ALIAS
 NVM_DIR                                 :=$(HOME)/.nvm
 export NVM_DIR
@@ -273,12 +274,8 @@ docker-start:
 	touch requirements.txt && $(PYTHON3) -m ensurepip && $(PYTHON3) -m pip install -q -r requirements.txt
 	test -d .venv || $(PYTHON3) -m virtualenv .venv
 	( \
-	   source .venv/bin/activate; $(PYTHON3) -m pip install -q -r requirements.txt; \
-	   $(PYTHON3) -m pip install -q --upgrade pip; \
-	);
-	( \
-	    while ! docker system info > /dev/null 2>&1; do\
-	    echo 'Waiting for docker to start...';\
+	   source .venv/bin/activate; $(PYTHON3) -m pip install -U -q -r requirements.txt; \
+	   $(PYTHON3) -m pip install -U -q --upgrade pip; \
 	    if [[ '$(OS)' == 'Linux' ]]; then\
 	    type -P apt && apt install docker*;\
 	    type -P systemctl && systemctl restart docker.service || type -P service && service docker.service restart || type -P apk &&  apk add openrc docker && rc-service docker restart || echo "try installing docker manually...";\
