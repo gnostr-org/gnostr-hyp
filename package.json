@@ -1,7 +1,7 @@
 {
   "name": "@gnostr/hyp",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A CLI for the hyper:// space network.",
   "bin": {
     "gnostr-hyp": "./bin/gnostr-hyp.js"

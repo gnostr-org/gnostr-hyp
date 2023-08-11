@@ -193,6 +193,9 @@ run:env pnpm## 	gnostr-proxy
 	nvm exec pnpm install; \
 		nvm exec pnpm run start; \
 )
+install:npm-install-g--force## 	install
+npm-install-g--force:## 	npm install -g --force
+	@npm install -g --force
 lynx-dump:
 	@type -P lynx && lynx -dump -nolist http://localhost:6102 #&& \
     #make lynx-dump | jq -R
