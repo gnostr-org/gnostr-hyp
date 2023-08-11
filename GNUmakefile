@@ -185,8 +185,8 @@ env:
 pnpm:## 	nvm exec npm install -g @pnpm/exe
 	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION)
 	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm use
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm exec npm install -g @pnpm/exe
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm exec npm install -g yarn
+	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm exec npm install -g --force @pnpm/exe
+	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm exec npm install -g --force yarn
 run:env pnpm## 	gnostr-proxy
 	@( \
 	. ~/.bashrc && \

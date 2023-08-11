@@ -4,30 +4,30 @@
   "version": "0.0.0",
   "description": "A CLI for the hyper:// space network.",
   "bin": {
-    "hyp": "./bin/hyp.js"
+    "gnostr-hyp": "./bin/gnostr-hyp.js"
   },
   "scripts": {
     "prepare": "$(which husky) install || node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
-    "start": "node ./bin/hyp",
+    "start": "node ./bin/gnostr-hyp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hypercore-protocol/hypercore-cli.git"
+    "url": "git+https://github.com/gnostr-org/gnostr-hyp.git"
   },
   "keywords": [
-    "beaker",
-    "cli"
+    "nostr",
+    "gnostr"
   ],
-  "author": "Blue Link Labs",
+  "author": "Blue Link Labs / gnostr.org",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hypercore-protocol/hypercore-cli/issues"
+    "url": "https://github.com/gnostr-org/gnostr-hyp/issues"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "homepage": "https://github.com/hypercore-protocol/hypercore-cli#readme",
+  "homepage": "https://github.com/gnostr-org/gnostr-hyp#readme",
   "dependencies": {
     "@eslint/eslintrc": "2.1.0",
     "ansi-diff-stream": "^1.2.1",
@@ -58,7 +58,7 @@
     "jest": "^27.0.0",
     "mime": "^1.4.0",
     "mkdirp": "^1.0.4",
-    "moment": "^2.17.0",
+    "moment": "^2.29.4",
     "p-debounce": "^2.1.0",
     "pretty-bytes": "^4.0.2",
     "pretty-hash": "^1.0.1",
