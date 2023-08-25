@@ -1,6 +1,5 @@
 {
   "name": "@gnostr/hyp",
-  "type": "module",
   "version": "0.0.1",
   "description": "A CLI for the hyper:// space network.",
   "bin": {
@@ -11,9 +10,18 @@
     "start": "node ./bin/gnostr-hyp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gnostr-org/gnostr-hyp.git"
+  "dependencies": {
+    "@fastify/websocket": "^8.0.0",
+    "autobase": "github:holepunchto/autobase",
+    "autodeebee": "^1.0.1",
+    "eslint": "8.47.0",
+    "fastify": "^4.17.0",
+    "graceful-goodbye": "^1.2.1",
+    "hyper-sdk": "^4.2.4",
+    "hyperbee": "^2.8.0",
+    "hyperdeebee": "github:Telios-org/hyperdeebee",
+    "nostr-tools": "^1.10.1",
+    "tape": "^5.6.3"
   },
   "keywords": [
     "nostr",

@@ -183,10 +183,13 @@ env:
 	@echo RELAYS=$(RELAYS)                              >>.env
 .PHONY:pnpm
 pnpm:## 	nvm exec npm install -g @pnpm/exe
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION)
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm use
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm exec npm install -g --force @pnpm/exe
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) && nvm exec npm install -g --force yarn
+	@type -P npm >/tmp/gnostr-lfs.log && npm i --silent --global yarn       2>/tmp/gnostr-lfs.log || echo
+	@type -P npm >/tmp/gnostr-lfs.log && npm i --silent --global @pnpm/exe  2>/tmp/gnostr-lfs.log || echo
+	@type -P npm >/tmp/gnostr-lfs.log && npm i --silent --global fastify    2>/tmp/gnostr-lfs.log || echo
+	@type -P npm >/tmp/gnostr-lfs.log && npm i --silent --global eslint     2>/tmp/gnostr-lfs.log || echo
+#@pnpm install reflect-metadata
+#@pnpm install pino-pretty
+start:run
 run:env pnpm## 	gnostr-proxy
 	@( \
 	. ~/.bashrc && \
