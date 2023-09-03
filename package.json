@@ -16,9 +16,13 @@
     "gnostr-lfs-db-explorer": "db_explore.js"
   },
   "scripts": {
-    "prepare": "$(which husky) install || node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
-    "start": "node ./bin/gnostr-hyp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "nvm-install": "$(which nvm) exec npm install -g --force >/tmp/gnostr-lfs.log",
+    "test": "$(which npm) run lint && tape tests/**/*.js",
+    "lint": "standard --fix",
+    "start": "NODE_REDIRECT_WARNINGS=/tmp/gnostr-lfs.log $(which node) server.js",
+    "pnpm-start": "NODE_REDIRECT_WARNINGS=/tmp/gnostr-lfs.log pnpm exec $(which node) server.js",
+    "dev": "$(which node) server.js",
+    "pnpm-dev": "pnpm exec $(which node) server.js"
   },
   "dependencies": {
     "@fastify/websocket": "^8.0.0",
