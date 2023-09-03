@@ -20,7 +20,9 @@
     "test": "$(which npm) run lint && tape tests/**/*.js",
     "lint": "standard --fix",
     "start": "NODE_REDIRECT_WARNINGS=/tmp/gnostr-lfs.log $(which node) server.js",
-    "dev": "$(which node) server.js"
+    "pnpm-start": "NODE_REDIRECT_WARNINGS=/tmp/gnostr-lfs.log pnpm exec $(which node) server.js",
+    "dev": "$(which node) server.js",
+    "pnpm-dev": "pnpm exec $(which node) server.js"
   },
   "dependencies": {
     "@fastify/websocket": "^8.0.0",
