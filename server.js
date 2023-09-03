@@ -20,15 +20,16 @@ const sdk = await SDK.create({
   autoJoin: true
 })
 
-//TODO:get git repo name
+// TODO:get git repo name
 //     for content topic
 
 const content = '#gnostr'
 async function writekey () {
   try {
-    //TODO: git config --add gnostr-lfs.pubkey
+    // TODO: git config --add gnostr-lfs.pubkey
     await fs.appendFile('.gnostr/lfs/KEYS', sdk.publicKey.toString('hex'))
-    //console.log('your key is', sdk.publicKey.toString('hex'))// we silence to only return EVENT body
+    await fs.appendFile('.gnostr/lfs/KEYS', "".toString())
+    // console.log('your key is', sdk.publicKey.toString('hex'))// we silence to only return EVENT body
   } catch (err) {
     console.log(err)
   }
@@ -47,7 +48,7 @@ exec("type -P gnostr || echo ''", (error, stdout, stderr) => {
     console.log(`gnostr-lfs stderr: ${stderr}`)
     return nil
   }
-  //console.log(`gnostr-lfs stdout: ${stdout}`);// we silence so only the EVENT body is returned
+  // console.log(`gnostr-lfs stdout: ${stdout}`);// we silence so only the EVENT body is returned
 })
 
 exec("which gnostr || echo 'gnostr not found!!! && 1'", (error, stdout, stderr) => {
@@ -71,7 +72,7 @@ exec(`gnostr --sec ${sdk.publicKey.toString('hex')} --tag "gnostr" "repo" --tag 
     console.log(`gnostr-lfs stderr: ${stderr}`)
     return
   }
-  console.log(`${stdout}`) //we silence so only EVENT body returned
+  console.log(`${stdout}`) // we silence so only EVENT body returned
 })
 
 goodbye(async _ => {
@@ -163,5 +164,5 @@ fi.register(async function (fastify) {
 
 fi.listen({ port, host: '0.0.0.0' }, err => {
   if (err) throw err
-  //console.log(`listening on ${port}`) //we silence so that only the EVENT body is returned
+  // console.log(`listening on ${port}`) //we silence so that only the EVENT body is returned
 })
