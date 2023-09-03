@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-
-process.title = "gnostr-hyp"
-
 import subcommand from 'subcommand'
 import fs from 'fs'
 import path from 'path'
@@ -37,6 +34,8 @@ import daemonStop from '../lib/commands/daemon/stop.js'
 
 import usage from '../lib/usage.js'
 
+process.title = 'gnostr-hyp'
+
 // main
 // =
 
@@ -69,13 +68,13 @@ const commands = {
 
 // handle command aliases
 const driveCmdAliases = ['sync', 'diff', 'ls', 'cat', 'put']
-var argv = process.argv.slice(2)
+const argv = process.argv.slice(2)
 if (driveCmdAliases.includes(argv[0])) {
   argv.unshift('drive')
 }
 
 // match & run the command
-var match = subcommand({ commands: Object.values(commands).map(wrapCommand), none })
+const match = subcommand({ commands: Object.values(commands).map(wrapCommand), none })
 match(argv)
 
 // error output when no/invalid command is given
@@ -93,7 +92,7 @@ function none (args) {
 }
 
 function wrapCommand (obj) {
-  var innerCommand = obj.command
+  const innerCommand = obj.command
 
   obj.command = async function (...args) {
     if (args[0].h || args[0].help) {
